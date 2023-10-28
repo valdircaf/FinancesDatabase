@@ -1,11 +1,14 @@
 package com.finances.finances.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -27,4 +30,11 @@ public class User implements Serializable{
     private String login;
     private String password;
     private Double salary;
+
+    @OneToMany(mappedBy = "user")
+    private List<Expense> expenses = new ArrayList<>();
+
+    public void setExpenses(Expense expense){
+        expenses.add(expense);
+    }
 }
