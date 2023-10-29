@@ -34,7 +34,14 @@ public class User implements Serializable{
     @OneToMany(mappedBy = "user")
     private List<Expense> expenses = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    private List<OtherCosts> otherCosts = new ArrayList<>();
+
     public void setExpenses(Expense expense){
         expenses.add(expense);
+    }
+
+    public void setOtherCosts(OtherCosts otherCosts){
+        this.otherCosts.add(otherCosts);
     }
 }
