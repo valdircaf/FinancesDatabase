@@ -43,7 +43,6 @@ public class UserController {
         }else {
             return ResponseEntity.badRequest().build();
         }
-        
     }
 
     @PutMapping(value = "/{id}")
