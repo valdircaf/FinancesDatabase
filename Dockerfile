@@ -1,9 +1,16 @@
-FROM maven:3.9.5-amazoncorretto-17 as build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -X -DskipTests
+FROM ubuntu:latest AS build
 
-FROM openjdk:17-ea-10-jdk-slim
-WORKDIR /app
-COPY --from=build ./app/target/*.jar ./springfinances.jar
-ENTRYPOINT java -jar springfinances.jar
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
+COPY . .
+
+RUN apt-get install maven -y
+RUN mvn clean install
+
+FROM openjdk:17-jdk-slim
+
+EXPOSE 8080
+
+COPY --from=build /target/finances-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
