@@ -1,4 +1,4 @@
-# Big Game Survey 
+# Finances App
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/valdircaf/FinancesDatabase/blob/main/LICENSE)) 
 
 # Sobre o projeto
