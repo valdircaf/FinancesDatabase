@@ -1,5 +1,7 @@
 # 💸 Finances App (Backend)
 
+https://github.com/valdircaf/FinancesDatabase/assets/70548483/579868da-9d1e-43f7-95e0-80cafd41acf2
+
 # Sobre o projeto
 
 Finances é um aplicativo desenvolvido para suprir uma necessidade própria, onde eu já havia procurado aplicativos para este fim, porém não havia encontrado.
